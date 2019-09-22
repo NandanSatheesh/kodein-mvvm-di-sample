@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity(), KodeinAware {
 
 
         addQuoteButton.setOnClickListener {
-            if (editTextAuthor.text.toString().length != 0 && editTextQuote.text.toString().length != 0) {
+            if (editTextAuthor.text.toString().isNotEmpty() && editTextQuote.text.toString().isNotEmpty()) {
                 val quote = Quote(editTextQuote.text.toString(), editTextAuthor.text.toString())
                 viewModel.addQuote(quote)
                 editTextQuote.setText("")
